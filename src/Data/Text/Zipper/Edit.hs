@@ -27,6 +27,7 @@ module Data.Text.Zipper.Edit
   , moveCursor
   , insertChar
   , breakLine
+  , killToBOL
   , killToEOL
   , gotoEOL
   , gotoBOL
@@ -110,6 +111,13 @@ breakLine :: (Monoid t, Monad m) => EditT t m ()
 breakLine = do
   z <- get
   put (TZ.breakLine z)
+
+-- | Remove all text from the cursor position to the beginning of the
+-- current line.
+killToBOL :: (Monoid t, Monad m) => EditT t m ()
+killToBOL = do
+  z <- get
+  put (TZ.killToBOL z)
 
 -- | Remove all text from the cursor position to the end of the current
 -- line.  If the cursor is at the beginning of a line and the line is
