@@ -1,5 +1,6 @@
 # text-zipper-monad
 
+[![Hackage](https://img.shields.io/hackage/v/text-zipper-monad.svg?style=flat)](https://hackage.haskell.org/package/text-zipper-monad)
 [![Build Status](https://travis-ci.org/kseo/text-zipper-monad.svg?branch=master)](https://travis-ci.org/kseo/text-zipper-monad)
 
 text-zipper-monad provides a monadic interface to the text-zipper package.
