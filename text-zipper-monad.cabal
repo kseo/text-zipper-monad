@@ -1,5 +1,5 @@
 name:                text-zipper-monad
-version:             0.1.0.0
+version:             0.2.0.0
 synopsis:            Monadic interface to the text-zipper package
 description:         Please see README.md
 homepage:            https://github.com/kseo/text-zipper-monad#readme
@@ -11,6 +11,7 @@ copyright:           BSD3
 category:            Text
 build-type:          Simple
 extra-source-files:  README.md
+                   , CHANGELOG.md
 cabal-version:       >=1.10
 
 library
