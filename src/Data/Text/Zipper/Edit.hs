@@ -69,11 +69,11 @@ clearZipper = do
 
 -- | Get the text contents of the zipper.
 getText :: (Monoid t, Monad m) => EditT t m [t]
-getText = get >>= return . TZ.getText
+getText = TZ.getText <$> get
 
 -- | The line of text on which the zipper's cursor currently resides.
 currentLine :: (Monoid t, Monad m) => EditT t m t
-currentLine = get >>= return . TZ.currentLine
+currentLine = TZ.currentLine <$> get
 
 -- | Get the cursor position of the zipper; returns @(row, col)@.
 -- @row@ ranges from @[0..num_rows-1]@ inclusive; @col@ ranges from
@@ -81,15 +81,15 @@ currentLine = get >>= return . TZ.currentLine
 -- line width indicate a cursor that is just past the end of a line of
 -- text.
 cursorPosition :: (Monoid t, Monad m) => EditT t m (Int, Int)
-cursorPosition = get >>= return . TZ.cursorPosition
+cursorPosition = TZ.cursorPosition <$> get
 
 -- | Return the lengths of the lines in the zipper.
 lineLengths :: (Monoid t, Monad m) => EditT t m [Int]
-lineLengths = get >>= return . TZ.lineLengths
+lineLengths = TZ.lineLengths <$> get
 
 -- | Get the line limit, if any, for a zipper.
 getLineLimit :: (Monoid t, Monad m) => EditT t m (Maybe Int)
-getLineLimit = get >>= return . TZ.getLineLimit
+getLineLimit = TZ.getLineLimit <$> get
 
 -- | Move the cursor to the specified row and column.  Invalid cursor
 -- positions will be ignored.  Valid cursor positions range as
