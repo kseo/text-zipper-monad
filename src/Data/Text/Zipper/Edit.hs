@@ -54,7 +54,7 @@ newtype EditT t m a = EditT { unEdit :: StateT (TextZipper t) m a }
 -- | Execute the edit session with the given zipper and return the
 -- modified zipper.
 execEditT :: (Monoid t, Monad m) => EditT t m a -> TextZipper t -> m (TextZipper t)
-execEditT e tz = execStateT (unEdit e) tz
+execEditT e = execStateT (unEdit e)
 
 -- | Execute the edit session with the given zipper and return the
 -- modified zipper.
